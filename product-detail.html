@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Detail – LuxShop</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Lux<span>Shop</span></a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="cart-btn" onclick="openCart()">🛒 Cart <span id="cart-count">0</span></button>
+    <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div style="padding:1.5rem 2rem;background:white;border-bottom:1px solid var(--border)">
+  <div class="breadcrumb" style="color:var(--gray)"><a href="index.html" style="color:var(--accent)">Home</a> / <a href="products.html" style="color:var(--accent)">Products</a> / Product Detail</div>
+</div>
+
+<div class="product-detail" id="product-detail">
+  <div class="product-detail-img" id="detail-emoji">👟</div>
+  <div class="product-detail-info">
+    <span class="product-badge" id="detail-badge">New</span>
+    <h1 id="detail-name">Product Name</h1>
+    <div class="product-detail-price" id="detail-price">$0.00</div>
+    <p class="product-detail-desc">
+      This premium product is crafted with exceptional quality materials, designed to elevate your everyday style. 
+      Built to last and styled to impress — a must-have addition to your collection. 
+      Available in multiple sizes and variations to suit your needs.
+    </p>
+    <div style="display:flex;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap">
+      <div><strong>⭐ Rating:</strong> 4.8/5 (124 reviews)</div>
+      <div><strong>📦 Stock:</strong> In Stock</div>
+      <div><strong>🚚 Shipping:</strong> Free over $50</div>
+    </div>
+    <div class="qty-wrapper">
+      <label style="font-weight:600">Quantity:</label>
+      <input type="number" id="detail-qty" class="form-control qty-input" value="1" min="1" max="99"/>
+    </div>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <button class="btn-primary" id="detail-add-btn" style="padding:1rem 2.5rem;font-size:1rem">🛒 Add to Cart</button>
+      <button class="btn-outline" onclick="openCart()" style="padding:1rem 2rem;font-size:1rem;color:var(--primary);border-color:var(--border)">View Cart</button>
+    </div>
+    <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border);display:flex;gap:2rem;color:var(--gray);font-size:0.9rem">
+      <span>🔒 Secure Payment</span>
+      <span>🔄 Easy Returns</span>
+      <span>✅ Quality Guaranteed</span>
+    </div>
+  </div>
+</div>
+
+<!-- Related Products -->
+<section class="section" style="background:var(--light)">
+  <div class="container">
+    <h2 class="section-title">You May Also Like</h2>
+    <p class="section-sub">More products from our collection</p>
+    <div class="products-grid" id="related-grid"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><a href="index.html" class="logo">Lux<span>Shop</span></a><p style="margin-top:1rem">Premium fashion for the modern lifestyle.</p></div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Support</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="#">info@luxshop.com</a></li><li><a href="#">+1 234 567 8900</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025–2026 LuxShop. All rights reserved.</p></div>
+</footer>
+
+<div class="cart-overlay" id="cart-overlay"></div>
+<div class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header"><h2>🛒 Shopping Cart</h2><button class="close-cart" onclick="closeCart()">×</button></div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-footer">
+    <div class="cart-total"><span>Total</span><span id="cart-total-price">$0.00</span></div>
+    <a href="checkout.html" class="checkout-btn">Proceed to Checkout →</a>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="js/main.js"></script>
+<script>
+  // Render related products (exclude current)
+  document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(location.search);
+    const id = parseInt(params.get('id')) || 1;
+    const related = products.filter(p => p.id !== id).slice(0, 4);
+    renderProducts(related, document.getElementById('related-grid'));
+  });
+</script>
+</body>
+</html>

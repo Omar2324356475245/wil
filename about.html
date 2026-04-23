@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us – LuxShop</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Lux<span>Shop</span></a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="cart-btn" onclick="openCart()">🛒 Cart <span id="cart-count">0</span></button>
+    <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>About LuxShop</h1>
+  <p>Our story, mission, and the team behind the brand</p>
+  <div class="breadcrumb"><a href="index.html">Home</a> / About Us</div>
+</div>
+
+<!-- STORY -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center" class="about-grid">
+      <div>
+        <span class="product-badge">Our Story</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:2.2rem;margin:1rem 0 1.5rem;line-height:1.2">From a Small Idea to a Premium Brand</h2>
+        <p style="color:var(--gray);line-height:1.9;margin-bottom:1.2rem">
+          LuxShop was founded in 2020 with a simple mission: make premium fashion accessible to everyone. 
+          What started as a small online boutique has grown into a trusted destination for quality products across shoes, bags, accessories, and clothing.
+        </p>
+        <p style="color:var(--gray);line-height:1.9;margin-bottom:1.2rem">
+          We believe that great style shouldn't come at a luxury price. Every product in our store is carefully 
+          selected for quality, craftsmanship, and value. Our team works tirelessly to bring you the best 
+          collections from around the world.
+        </p>
+        <p style="color:var(--gray);line-height:1.9">
+          Today, we serve over 12,000 happy customers with a 4.9-star rating and growing every day.
+        </p>
+      </div>
+      <div style="background:linear-gradient(135deg,var(--primary),#0f3460);border-radius:20px;padding:4rem;text-align:center;color:white">
+        <div style="font-size:5rem;margin-bottom:1rem">🛍️</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:1rem">Our Mission</h3>
+        <p style="opacity:.8;line-height:1.8">To deliver exceptional quality products with outstanding customer service, making premium fashion accessible to everyone, everywhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section" style="background:var(--primary)">
+  <div class="container">
+    <h2 class="section-title" style="color:white">Our Values</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,.6)">What drives us every day</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem">
+      <div style="background:rgba(255,255,255,.07);border-radius:16px;padding:2rem;text-align:center">
+        <div style="font-size:2.5rem;margin-bottom:1rem">💎</div>
+        <h3 style="color:white;font-weight:700;margin-bottom:.7rem">Quality First</h3>
+        <p style="color:rgba(255,255,255,.6);line-height:1.7;font-size:.9rem">Every product passes our strict quality check before reaching you.</p>
+      </div>
+      <div style="background:rgba(255,255,255,.07);border-radius:16px;padding:2rem;text-align:center">
+        <div style="font-size:2.5rem;margin-bottom:1rem">🤝</div>
+        <h3 style="color:white;font-weight:700;margin-bottom:.7rem">Customer First</h3>
+        <p style="color:rgba(255,255,255,.6);line-height:1.7;font-size:.9rem">Your satisfaction is our number one priority, always.</p>
+      </div>
+      <div style="background:rgba(255,255,255,.07);border-radius:16px;padding:2rem;text-align:center">
+        <div style="font-size:2.5rem;margin-bottom:1rem">🌍</div>
+        <h3 style="color:white;font-weight:700;margin-bottom:.7rem">Sustainability</h3>
+        <p style="color:rgba(255,255,255,.6);line-height:1.7;font-size:.9rem">We're committed to eco-friendly packaging and ethical sourcing.</p>
+      </div>
+      <div style="background:rgba(255,255,255,.07);border-radius:16px;padding:2rem;text-align:center">
+        <div style="font-size:2.5rem;margin-bottom:1rem">🚀</div>
+        <h3 style="color:white;font-weight:700;margin-bottom:.7rem">Innovation</h3>
+        <p style="color:rgba(255,255,255,.6);line-height:1.7;font-size:.9rem">Constantly improving our platform and product selection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Meet the Team</h2>
+    <p class="section-sub">The people behind LuxShop</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">👨‍💼</div>
+        <div class="team-name">Ahmed Hassan</div>
+        <div class="team-role">Founder & CEO</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">👩‍🎨</div>
+        <div class="team-name">Sara Mohamed</div>
+        <div class="team-role">Head of Design</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">👨‍💻</div>
+        <div class="team-name">Omar Ali</div>
+        <div class="team-role">Lead Developer</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">👩‍📦</div>
+        <div class="team-name">Nour Khaled</div>
+        <div class="team-role">Operations Manager</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="background:var(--accent);color:white;padding:4rem 2rem">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2rem;max-width:900px;margin:0 auto;text-align:center">
+    <div><div style="font-size:2.5rem;font-weight:900;font-family:'Playfair Display',serif">2020</div><div style="opacity:.85">Year Founded</div></div>
+    <div><div style="font-size:2.5rem;font-weight:900;font-family:'Playfair Display',serif">12K+</div><div style="opacity:.85">Customers</div></div>
+    <div><div style="font-size:2.5rem;font-weight:900;font-family:'Playfair Display',serif">500+</div><div style="opacity:.85">Products</div></div>
+    <div><div style="font-size:2.5rem;font-weight:900;font-family:'Playfair Display',serif">4.9★</div><div style="opacity:.85">Average Rating</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><a href="index.html" class="logo">Lux<span>Shop</span></a><p style="margin-top:1rem">Premium fashion for the modern lifestyle.</p></div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Support</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="#">info@luxshop.com</a></li><li><a href="#">+1 234 567 8900</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025–2026 LuxShop. All rights reserved.</p></div>
+</footer>
+
+<div class="cart-overlay" id="cart-overlay"></div>
+<div class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header"><h2>🛒 Shopping Cart</h2><button class="close-cart" onclick="closeCart()">×</button></div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-footer">
+    <div class="cart-total"><span>Total</span><span id="cart-total-price">$0.00</span></div>
+    <a href="checkout.html" class="checkout-btn">Proceed to Checkout →</a>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="js/main.js"></script>
+<style>
+@media(max-width:768px){.about-grid{grid-template-columns:1fr!important;gap:2rem}}
+</style>
+</body>
+</html>

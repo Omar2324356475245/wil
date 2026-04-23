@@ -1,237 +1,100 @@
-# School Tournament Management System
-
-A complete PHP-based web application for managing school football tournaments with dynamic team management, match recording, standings tracking, and schedule viewing.
-
-## Features
-
-### ✨ Main Features
-- **Dynamic Team Management**: Add, edit, and delete teams
-- **Match Recording**: Record match results with automatic points calculation
-- **Live Standings**: Real-time tournament rankings with detailed statistics
-- **Match Schedule**: View upcoming and past matches organized by date
-- **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
-- **Beautiful UI**: Modern Bootstrap 5 interface with icons
-
-### 📊 Statistics Tracking
-- Points (Win: 3, Draw: 1, Loss: 0)
-- Goals Scored & Conceded
-- Goal Difference
-- Wins, Draws, Losses
-- Best Attack & Best Defense rankings
-
-## Requirements
-
-- PHP 7.4 or higher
-- MySQL 5.7 or higher
-- Web Server (Apache/Nginx)
-- XAMPP, WAMP, or LAMP (recommended for local development)
-
-## Installation Instructions
-
-### Step 1: Extract Files
-1. Extract the `school_tournament.zip` file
-2. Copy the `school_tournament` folder to your web server directory:
-   - **XAMPP**: `C:/xampp/htdocs/`
-   - **WAMP**: `C:/wamp/www/`
-   - **LAMP**: `/var/www/html/`
-
-### Step 2: Create Database
-1. Open phpMyAdmin (http://localhost/phpmyadmin)
-2. Click on "Import" tab
-3. Choose the file: `database.sql`
-4. Click "Go" to execute
-
-**OR manually create database:**
-```sql
-CREATE DATABASE school_tournament;
-```
-
-### Step 3: Configure Database Connection
-1. Open `includes/db.php`
-2. Update credentials if needed:
-```php
-$host = 'localhost';
-$dbname = 'school_tournament';
-$username = 'root';
-$password = ''; // Add your MySQL password if any
-```
-
-### Step 4: Access Application
-Open your browser and navigate to:
-```
-http://localhost/school_tournament/
-```
-
-## File Structure
-
-```
-school_tournament/
-├── includes/
-│   ├── db.php          # Database connection
-│   ├── header.php      # Header template
-│   └── footer.php      # Footer template
-├── index.php           # Home page with statistics
-├── teams.php           # Team management (CRUD)
-├── matches.php         # Match recording
-├── standings.php       # Tournament standings
-├── schedule.php        # Match schedule
-├── database.sql        # Database setup file
-└── README.md          # This file
-```
-
-## Usage Guide
-
-### 1. Add Teams
-- Go to **Teams** page
-- Enter class name (e.g., "Class A1")
-- Click "Add Team"
-- Edit or delete teams as needed
-
-### 2. Record Matches
-- Go to **Matches** page
-- Select Team 1 and Team 2
-- Enter goals for each team
-- Select match date and time
-- Click "Record Match"
-- **Points are automatically calculated!**
-
-### 3. View Standings
-- Go to **Standings** page
-- See complete tournament table
-- View wins, draws, losses
-- Check goal statistics
-- See top scorers and best defense
-
-### 4. Check Schedule
-- Go to **Schedule** page
-- View upcoming matches
-- Check past match results
-- See all matches in calendar view
-
-## Database Schema
-
-### Teams Table
-```sql
-- id (Primary Key)
-- class_name (Unique)
-- points
-- goals_scored
-- goals_conceded
-- created_at
-```
-
-### Matches Table
-```sql
-- id (Primary Key)
-- team1_id (Foreign Key)
-- team2_id (Foreign Key)
-- team1_goals
-- team2_goals
-- match_date
-- created_at
-```
-
-## Scoring Rules
-
-- **Win**: 3 points
-- **Draw**: 1 point
-- **Loss**: 0 points
-
-**Ranking Order:**
-1. Total Points
-2. Goal Difference
-3. Goals Scored
-
-## Features Highlights
-
-### Dynamic Updates
-- Team statistics update automatically when matches are recorded
-- Deleting a match reverses all statistics changes
-- Real-time standings calculation
-
-### User-Friendly Interface
-- Clean, modern design
-- Responsive layout
-- Interactive buttons and icons
-- Color-coded statistics
-- Auto-hiding success/error messages
-
-### Data Validation
-- Teams cannot play against themselves
-- Duplicate team names prevented
-- Foreign key constraints ensure data integrity
-- Proper error handling
-
-## Troubleshooting
-
-### Database Connection Error
-- Check MySQL is running
-- Verify database credentials in `includes/db.php`
-- Ensure database `school_tournament` exists
-
-### Page Not Found (404)
-- Check file paths
-- Verify all files are in correct directory
-- Clear browser cache
-
-### Styles Not Loading
-- Check internet connection (Bootstrap CDN)
-- Verify header.php is included properly
-
-## Technology Stack
-
-- **Backend**: PHP 7.4+ with PDO
-- **Database**: MySQL 5.7+
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Framework**: Bootstrap 5.3.0
-- **Icons**: Bootstrap Icons 1.10.0
-
-## Browser Support
-
-- Chrome (recommended)
-- Firefox
-- Safari
-- Edge
-- Opera
-
-## Security Features
-
-- Prepared statements (SQL injection prevention)
-- XSS protection with htmlspecialchars()
-- CSRF protection can be added
-- Input validation
-
-## Future Enhancements
-
-Possible improvements:
-- User authentication system
-- Player statistics
-- Match photos/videos
-- PDF report generation
-- Email notifications
-- Advanced filtering
-- Search functionality
-- Match commentary
-
-## Support
-
-For issues or questions:
-1. Check database connection
-2. Verify PHP version
-3. Check error logs
-4. Review installation steps
-
-## License
-
-Free to use for educational purposes.
-
-## Credits
-
-Developed for school tournament management.
+# LuxShop – Full E-commerce Website Project
+### IT Department | Web Programming | Third Grade | 2025–2026
 
 ---
 
-**Version**: 1.0  
-**Last Updated**: February 2025  
+## 📋 Project Overview
 
-Enjoy managing your tournament! 🏆⚽
+LuxShop is a fully responsive e-commerce website built as the final project for the Web Programming course.
+It simulates a real online store with dynamic cart functionality, product filtering, and a checkout flow.
+
+---
+
+## 🗂️ Folder Structure
+
+```
+ecommerce-project/
+│
+├── index.html            ← Home Page (Navbar, Hero, Featured Products)
+├── products.html         ← Products Page (Grid, Filter, Search)
+├── product-detail.html   ← Product Details Page
+├── checkout.html         ← Checkout Page (Form, Order Summary)
+├── about.html            ← About Us Page
+├── contact.html          ← Contact Us Page
+│
+├── css/
+│   └── style.css         ← All styles (responsive, animations, variables)
+│
+└── js/
+    └── main.js           ← Cart logic, product rendering, interactivity
+```
+
+---
+
+## ✅ Pages Included
+
+| Page | Description |
+|------|-------------|
+| `index.html` | Home: Navbar, Hero, Featured Products, Categories, Features |
+| `products.html` | All Products with filter by category + live search |
+| `product-detail.html` | Single product view with quantity & Add to Cart |
+| `checkout.html` | Customer form + Order summary + Payment method |
+| `about.html` | Company story, values, team, stats |
+| `contact.html` | Contact form + info + social links |
+
+---
+
+## 🛠️ Technologies Used
+
+- **HTML5** – Semantic structure
+- **CSS3** – Custom properties, flexbox, grid, animations
+- **JavaScript (ES6+)** – DOM manipulation, event handling
+- **Google Fonts** – Playfair Display + DM Sans
+- **localStorage** – Cart data persistence across pages
+
+---
+
+## ⚡ Key Features
+
+- 🛒 **Dynamic Cart** – Add/remove items, update quantities, live total
+- 🔍 **Live Search** – Filter products as you type
+- 🏷️ **Category Filter** – Filter by Shoes, Bags, Accessories, Clothing
+- 📱 **Fully Responsive** – Mobile, tablet, desktop
+- 🍞 **Cart Sidebar** – Slide-in cart panel on any page
+- ✅ **Order Confirmation** – Success screen after checkout
+- 💬 **Contact Form** – With success feedback
+- 🍞 **Toast Notifications** – "Added to cart" feedback
+
+---
+
+## 🚀 How to Run
+
+1. Download or unzip the project folder
+2. Open `index.html` in any modern browser
+3. No installation or server required (runs as static HTML)
+
+> For best results, use Google Chrome or Firefox.
+
+---
+
+## 📊 Grading Criteria Coverage
+
+| Criteria | Coverage |
+|----------|----------|
+| Functionality & Code Quality (40%) | ✅ Full cart, JS interactivity, clean code |
+| Design & Responsiveness (30%) | ✅ Mobile-first, consistent design system |
+| Presentation & Documentation (20%) | ✅ This README + code comments |
+| Creativity & Advanced Features (10%) | ✅ Sidebar cart, toast, live search, animations |
+
+---
+
+## 👨‍💻 Developer Notes
+
+- All product data is stored in a JavaScript array in `js/main.js`
+- Cart state is saved in `localStorage` so it persists between page visits
+- No backend required — fully frontend with simulated data
+- Easy to extend: add real API calls or PHP backend by replacing the data array
+
+---
+
+*© 2025–2026 LuxShop | IT Department – Web Programming Final Project*

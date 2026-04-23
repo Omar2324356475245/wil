@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products – LuxShop</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Lux<span>Shop</span></a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="cart-btn" onclick="openCart()">🛒 Cart <span id="cart-count">0</span></button>
+    <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>Our Products</h1>
+  <p>Explore our full collection</p>
+  <div class="breadcrumb"><a href="index.html">Home</a> / Products</div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <!-- Search -->
+    <div style="max-width:500px;margin:0 auto 2rem;position:relative">
+      <input type="text" id="search-input" class="form-control" placeholder="🔍  Search products..." style="padding-left:1.2rem;font-size:1rem"/>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-cat="all">All</button>
+      <button class="filter-btn" data-cat="shoes">👟 Shoes</button>
+      <button class="filter-btn" data-cat="bags">👜 Bags</button>
+      <button class="filter-btn" data-cat="accessories">🕶️ Accessories</button>
+      <button class="filter-btn" data-cat="clothing">🧥 Clothing</button>
+    </div>
+
+    <div class="products-grid" id="products-grid"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Lux<span>Shop</span></a>
+      <p style="margin-top:1rem">Premium fashion for the modern lifestyle.</p>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Categories</h4><ul><li><a href="#">Shoes</a></li><li><a href="#">Bags</a></li><li><a href="#">Accessories</a></li><li><a href="#">Clothing</a></li></ul></div>
+    <div class="footer-col"><h4>Support</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025–2026 LuxShop. All rights reserved.</p></div>
+</footer>
+
+<div class="cart-overlay" id="cart-overlay"></div>
+<div class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header"><h2>🛒 Shopping Cart</h2><button class="close-cart" onclick="closeCart()">×</button></div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-footer">
+    <div class="cart-total"><span>Total</span><span id="cart-total-price">$0.00</span></div>
+    <a href="checkout.html" class="checkout-btn">Proceed to Checkout →</a>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="js/main.js"></script>
+<script>
+  // Auto-select category from URL param
+  const urlCat = new URLSearchParams(location.search).get('cat');
+  if (urlCat) {
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.classList.remove('active');
+      if (b.dataset.cat === urlCat) b.classList.add('active');
+    });
+  }
+</script>
+</body>
+</html>
